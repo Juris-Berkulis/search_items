@@ -9,5 +9,8 @@ const pinia = createPinia();
 
 app.use(router);
 app.use(pinia);
+app.directive('focus', {
+    mounted: (el) => el.focus()
+});
 
 app.mount('#app');

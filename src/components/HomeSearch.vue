@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { onUnmounted, ref, type Ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useSearchStore } from '@/store/search';
 import { useJokesCountStore } from '@/store/jokesCount';
-import { onUnmounted, ref, type Ref } from 'vue';
 
 const searchStore = useSearchStore();
 const jokesCountStore = useJokesCountStore();
@@ -32,7 +32,7 @@ onUnmounted(() => {
 
 <template>
 <div class="search">
-    <input class="input" @input="inputedValueDelay" :value="searchValue" type="text" placeholder="Search jokes...">
+    <input class="input" @input="inputedValueDelay" :value="searchValue" v-focus type="text" placeholder="Search jokes...">
     <p class="additionally" v-if="jokesCount">Found jokes: {{ jokesCount }}</p>
 </div>
 </template>

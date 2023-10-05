@@ -55,6 +55,18 @@ watchEffect(() => {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(6, 1fr);
+
+    @media (max-width: $sp-l) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: $sp-m) {
+        & {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
 }
 
 .loader {

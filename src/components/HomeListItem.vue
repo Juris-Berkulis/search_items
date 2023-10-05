@@ -41,30 +41,83 @@ const createDate: ComputedRef<string> = computed(() => {
     justify-content: space-between;
     background-color: $bg-main;
     box-shadow: $bsh-main;
-    color: $color-main;
-    font-family: $ff-primary;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
+
+    @media (min-width: calc($sp-l + 1px)) {
+        &:first-child, 
+        &:nth-child(2) {
+            grid-column: auto/span 3;
+            min-height: 262px;
+            padding: 40px 40px 25px;
+            font-size: 20px;
+            line-height: 30px;
+
+            & .description {
+                margin-bottom: 60px;
+            }
+        }
+    }
+
+    @media (max-width: $sp-l) {
+        & {
+            grid-column: auto/span 1;
+        }
+    }
+
+    @media (max-width: $sp-m) {
+        & {
+            min-height: 0;
+        }
+    }
 
     & .description {
         margin-bottom: 30px;
+        color: $color-main;
+        font-family: $ff-primary;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        overflow-wrap: break-word;
+
+        @media (max-width: $sp-m) {
+            & {
+                margin-bottom: 15px;
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+
+        @media (max-width: $sp-s) {
+            & {
+                word-break: break-all;
+            }
+        }
     }
 
     & .down {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 10px;
         color: #767676;
         font-family: $ff-second;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+
+        @media (max-width: $sp-m) {
+            & {
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
     }
 
     & .link {
         position: relative;
+        word-break: break-all;
 
         &::before, 
         &::after {
@@ -96,19 +149,6 @@ const createDate: ComputedRef<string> = computed(() => {
             &::after {
                 width: 100%;
             }
-        }
-    }
-
-    &:first-child, 
-    &:nth-child(2) {
-        grid-column: auto/span 3;
-        min-height: 262px;
-        padding: 40px 40px 25px;
-        font-size: 20px;
-        line-height: 30px;
-
-        & .description {
-            margin-bottom: 60px;
         }
     }
 }

@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/Fira_Sans/400/FiraSans-Regular.eot');
+    src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+        url('../fonts/Fira_Sans/400/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Fira_Sans/400/FiraSans-Regular.woff2') format('woff2'),
+        url('../fonts/Fira_Sans/400/FiraSans-Regular.woff') format('woff'),
+        url('../fonts/Fira_Sans/400/FiraSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/Fira_Sans/700/FiraSans-Bold.eot');
+    src: local('Fira Sans Bold'), local('FiraSans-Bold'),
+        url('../fonts/Fira_Sans/700/FiraSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Fira_Sans/700/FiraSans-Bold.woff2') format('woff2'),
+        url('../fonts/Fira_Sans/700/FiraSans-Bold.woff') format('woff'),
+        url('../fonts/Fira_Sans/700/FiraSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/400/Montserrat-Regular.eot');
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+        url('../fonts/Montserrat/400/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat/400/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat/400/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat/400/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

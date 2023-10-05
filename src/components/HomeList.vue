@@ -38,10 +38,15 @@ watchEffect(() => {
 </script>
 
 <template>
-<div>
+<div class="list">
     <HomeListItem v-for="joke of jokesList" :key="joke.id" :joke="joke" />
 </div>
 </template>
 
 <style scoped lang="scss">
+.list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+}
 </style>

@@ -5,11 +5,12 @@ import HomeList from '@/components/HomeList.vue';
 </script>
 
 <template>
-<div>
-    <HomeSearch />
-    <HomeList />
-</div>
+<HomeSearch class="search" />
+<HomeList />
 </template>
 
 <style scoped lang="scss">
+.search {
+    margin-bottom: 60px;
+}
 </style>

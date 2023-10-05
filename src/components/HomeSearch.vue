@@ -31,9 +31,49 @@ onUnmounted(() => {
 </script>
 
 <template>
-<input @input="inputedValueDelay" :value="searchValue" type="text" placeholder="Search jokes...">
-<p v-if="jokesCount">Found jokes: {{ jokesCount }}</p>
+<div class="search">
+    <input class="input" @input="inputedValueDelay" :value="searchValue" type="text" placeholder="Search jokes...">
+    <p class="additionally" v-if="jokesCount">Found jokes: {{ jokesCount }}</p>
+</div>
 </template>
 
 <style scoped lang="scss">
+@import '@/assets/styles/variables.scss';
+
+$indentation: 36px;
+$color: #656ec2;
+
+.search {
+    width: 100%;
+    max-width: 626px;
+    margin: 0 auto;
+}
+
+.input {
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 20px $indentation;
+    background-color: $bg-main;
+    box-shadow: $bsh-main;
+    color: $color;
+    font-family: $ff-primary;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &::placeholder {
+        color: $color;
+    }
+}
+
+.additionally {
+    margin-left: $indentation;
+    color: $color-main;
+    font-family: $ff-second;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 </style>

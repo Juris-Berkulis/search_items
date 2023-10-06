@@ -3,10 +3,10 @@ import { watchEffect, type Ref, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import HomeListItem from '@/components/HomeListItem.vue';
 import BaseLoader from '@/components/base/BaseLoader.vue';
+import { urlForChuckNorrisQuery } from '@/data/variables';
+import { useFetch } from '@/composables/fetch';
 import { useSearchStore } from '@/store/search';
 import { useJokesCountStore } from '@/store/jokesCount';
-import { useFetch } from '@/composables/fetch';
-import { urlForChuckNorrisQuery } from '@/data/variables';
 import type { Joke, FetchData } from '@/types/response';
 
 const searchStore = useSearchStore();

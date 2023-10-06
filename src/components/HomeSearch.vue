@@ -32,7 +32,14 @@ onUnmounted(() => {
 
 <template>
 <div class="search">
-    <input class="input" @input="inputedValueDelay" :value="searchValue" v-focus type="text" placeholder="Search jokes...">
+    <input 
+        class="input" 
+        @input="inputedValueDelay" 
+        :value="searchValue" 
+        v-focus 
+        type="text" 
+        placeholder="Search jokes..."
+    >
     <p class="additionally" v-if="jokesCount">Found jokes: {{ jokesCount }}</p>
 </div>
 </template>

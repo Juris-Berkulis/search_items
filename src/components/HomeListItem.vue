@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Joke } from '@/types/response';
 import { computed, type ComputedRef } from 'vue';
+import type { Joke } from '@/types/response';
 
 interface Props {
     joke: Joke,

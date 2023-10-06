@@ -38,8 +38,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/styles/variables.scss';
-
 $indentation: 36px;
 $color: #656ec2;
 

@@ -30,8 +30,6 @@ const createDate: ComputedRef<string> = computed(() => {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/styles/variables.scss';
-
 .joke {
     grid-column: auto/span 2;
     min-height: 150px;

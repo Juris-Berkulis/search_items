@@ -49,8 +49,6 @@ watchEffect(() => {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/styles/variables.scss';
-
 .list {
     display: grid;
     grid-gap: 20px;

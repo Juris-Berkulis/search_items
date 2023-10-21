@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onUnmounted, ref, type Ref } from 'vue';
+import { onUnmounted, ref, type ComputedRef, type Ref, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useSearchStore } from '@/store/search';
 import { useJokesCountStore } from '@/store/jokesCount';
@@ -16,9 +16,15 @@ const {
 } = storeToRefs(jokesCountStore);
 
 const timerId: Ref<ReturnType<typeof setTimeout> | undefined> = ref();
+const allusionTrigger: Ref<boolean> = ref(false);
+
+const isShowAllusion: ComputedRef<boolean> = computed(() => {
+    return searchValue.value.length < 4 && allusionTrigger.value
+});
 
 const inputedValueDelay = (event: Event): void => {
     clearTimeout(Number(timerId.value));
+    allusionTrigger.value = true;
 
     timerId.value = setTimeout(() => {
         searchValue.value = (event.target as HTMLInputElement).value;
@@ -40,7 +46,8 @@ onUnmounted(() => {
         type="text" 
         placeholder="Search jokes..."
     >
-    <p class="additionally" v-if="jokesCount">Found jokes: {{ jokesCount }}</p>
+    <p class="additionally allusion" v-if="isShowAllusion">Enter more than 3 characters</p>
+    <p class="additionally" v-else-if="jokesCount">Found jokes: {{ jokesCount }}</p>
 </div>
 </template>
 
@@ -80,5 +87,9 @@ $color: #656ec2;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    &.allusion {
+        color: #ff0000;
+    }
 }
 </style>
